@@ -1,0 +1,119 @@
+$break-320: 320px;
+$break-480: 480px;
+$break-768: 768px;
+$break-1024: 1024px;
+$break-481: 481px;
+$break-767: 767px;
+$break-1200:1200px;
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: $break-1200) {
+  .container-large {
+    max-width: 1742px;
+    width: auto;
+    margin: auto;
+    margin-top: auto;
+    padding: 0;
+  }
+  //#page > .container {
+  //
+  //  margin-top: 50px;
+  //
+  //}
+}
+@media (min-width: $break-768) and (max-width: $break-1024) {
+
+
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: $break-768) and (max-width: $break-1024) and (orientation: landscape) {
+
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width:$break-481) and (max-width: $break-767) {
+
+
+}
+
+@media only screen and (min-width:$break-320) and (max-width: $break-480){
+
+  #navbar-main{
+
+    background: $dark;
+    .navbar-brand{
+      img{
+        height: 50px;
+      }
+    }
+
+  }
+  .cover{
+    background-position: 0 0 !important;
+  }
+  //.hero_slider.mt-n4 {
+  //  margin-top: 85px !important;
+  //}
+
+  #block-mshtryanmachhksanyhstnd {
+    padding: 20px !important;
+  }
+  .paragraph--background-image{
+    height: 300px !important;
+  }
+  .user6 #block-webform{
+    padding: 20px !important;
+  }
+  .path-frontpage #navbar-main{
+    position: relative !important;
+    top: inherit !important;
+  }
+  .user2 .cover--img::before{
+    border-right: 150px solid transparent !important;
+    border-left: 150px solid transparent  !important;
+    border-bottom: 300px solid #fff  !important;
+  }
+  .row {
+    margin: 0 !important;
+  }
+  .readmore{
+    position: relative !important;
+  }
+  .user1 .cover--img::before{
+    width: 300px !important;
+    height: 300px !important;
+  }
+  .boxes .box {
+    height: 358px !important;
+  }
+  .navbar{
+    padding: 0 !important;
+  }
+  .navbar-collapse{
+    padding: 0 !important;
+  }
+  .search-overlay-container .search-overlay-container-inner .content.container-inline .search-block-form .form-type-search {
+    width: 70% !important;
+  }
+  .user4 .desc{
+    padding: 100px 0 !important;
+  }
+  .boxes .container-fluid{
+    padding: 0 !important;
+  }
+  #navbar-main .navbar-brand {
+    padding: 0 !important;
+  }
+}

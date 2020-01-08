@@ -1,0 +1,28 @@
+# Persian, Farsi translation of SMTP Authentication Support (8.x-1.0-beta6)
+# Copyright (c) 2019 by the Persian, Farsi translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SMTP Authentication Support (8.x-1.0-beta6)\n"
+"POT-Creation-Date: 2019-10-16 00:47+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: Persian, Farsi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "Username"
+msgstr "نام کاربری"
+msgid "On"
+msgstr "روشن"
+msgid "No"
+msgstr "خیر"
+msgid "Password"
+msgstr "گذرواژه"
+msgid "Mail"
+msgstr "ارسال نامه"
+msgid "Off"
+msgstr "خاموش"
+msgid "Hostname"
+msgstr "نام میزبان"

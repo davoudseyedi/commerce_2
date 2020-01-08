@@ -1,0 +1,330 @@
+{#
+/**
+ * @file
+ * Default theme implementation for field collection items.
+ *
+ * Available variables:
+ * - content: An array of comment items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {% hide(content.field_example) %} to temporarily suppress the printing
+ *   of a given element.
+ * - title: The (sanitized) field collection item label.
+ * - url: Direct url of the current entity if specified.
+ * - page: Flag for the full page state.
+ * - attributes: HTML attributes for the surrounding element.
+ *    Attributes include the 'class' information.
+ * - content_attributes: HTML attributes for the content element.
+ *
+ * @see template_preprocess()
+ * @see template_preprocess_entity()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+  'field-collection-item',
+  'field-collection-item--name-' ~ field_collection_item.name|clean_class,
+  'field-collection-item--view-mode-' ~ field_collection_item.view_mode|clean_class,
+]
+%}
+<div{{ attributes.addClass(classes) }}>
+  <div class="content"{{ content_attributes }}>
+    {#    {{ content }}#}
+    <table class="table table-striped">
+      <tbody>
+      {% if content.field_other_option4.0 %}
+        <tr>
+
+          <td>{{ content.field_other_option4['#title'] }}</td>
+          <td>{{ content.field_other_option4.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_option_legs_size.0%}
+        <tr>
+
+          <td>{{ content.field_option_legs_size['#title'] }}</td>
+          <td>{{ content.field_option_legs_size.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_option1_frame_type.0  %}
+        <tr>
+
+          <td>{{ content.field_back_frame_type['#title'] }}</td>
+          <td>{{ content.field_option1_frame_type.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if  content.field_back_frame_type.0  %}
+        <tr>
+
+          <td>{{ content.field_back_frame_type['#title'] }}</td>
+          <td>{{ content.field_back_frame_type.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_back_frame_type.0 %}
+        <tr>
+
+          <td>{{ content.field_bottom_frame_type['#title'] }}</td>
+          <td>{{ content.field_back_frame_type.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_bottom_frame_type.0 %}
+        <tr>
+
+          <td>{{ content.field_bottom_frame_type['#title'] }}</td>
+          <td>{{ content.field_bottom_frame_type.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_back_frame.0 %}
+        <tr>
+
+          <td>{{ content.field_back_frame['#title'] }}</td>
+          <td>{{ content.field_back_frame.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if  content.field_bottom_frame.0 %}
+        <tr>
+
+          <td>{{ content.field_bottom_frame['#title'] }}</td>
+          <td>{{ content.field_bottom_frame.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_back_frame_type.0  %}
+        <tr>
+
+          <td>{{ content.field_back_frame_type['#title'] }}</td>
+          <td>{{ content.field_back_frame_type.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_body_type.0  %}
+        <tr>
+
+          <td>{{ content.field_body_type['#title'] }}</td>
+          <td>{{ content.field_body_type.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_leg_chairs.0  %}
+
+        <tr>
+
+          <td>{{ content.field_leg_chairs['#title'] }}</td>
+          <td>{{ content.field_leg_chairs.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_back_frame_type.0  %}
+        <tr>
+
+          <td>{{ content.field_back_frame_type['#title'] }}</td>
+          <td>{{ content.field_back_frame_type.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_wheel_type.0 %}
+        <tr>
+
+          <td>{{ content.field_wheel_type['#title'] }}</td>
+          <td>{{ content.field_wheel_type.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_min_height.0 %}
+        <tr>
+
+          <td>{{ content.field_min_height['#title'] }}</td>
+          <td>{{ content.field_min_height.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_option1.0  %}
+        <tr>
+
+          <td>{{ content.field_option1['#title'] }}</td>
+          <td>{{ content.field_option1.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_option1_option.0  %}
+        <tr>
+
+          <td>{{ content.field_option1_option['#title'] }}</td>
+          <td>{{ content.field_option1_option.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_back_frame_option.0  %}
+        <tr>
+
+          <td>{{ content.field_back_frame_option['#title'] }}</td>
+          <td>{{ content.field_back_frame_option.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_other_option3.0 %}
+        <tr>
+
+          <td>{{ content.field_other_option3['#title'] }}</td>
+          <td>{{ content.field_other_option3.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_field_back_dimension2.0  %}
+        <tr>
+
+          <td>{{ content.field_field_back_dimension2['#title'] }}</td>
+          <td>{{ content.field_field_back_dimension2.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_main_dimension.0   %}
+        <tr>
+
+          <td>{{ content.field_main_dimension['#title'] }}</td>
+          <td>{{ content.field_main_dimension.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_option1_size.0 %}
+        <tr>
+
+          <td>{{ content.field_option1_size['#title'] }}</td>
+          <td>{{ content.field_option1_size.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_main_dimension2.0  %}
+        <tr>
+
+          <td>{{ content.field_main_dimension2['#title'] }}</td>
+          <td>{{ content.field_main_dimension2.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_bottom_dimension.0 %}
+        <tr>
+
+          <td>{{ content.field_bottom_dimension['#title'] }}</td>
+          <td>{{ content.field_bottom_dimension.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_height_option.0  %}
+        <tr>
+
+          <td>{{ content.field_height_option['#title'] }}</td>
+          <td>{{ content.field_height_option.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_option1_customizable.0  %}
+        <tr>
+
+          <td>{{ content.field_option1_customizable['#title'] }}</td>
+          <td>{{ content.field_option1_customizable.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_back_option1.0  %}
+        <tr>
+
+          <td>{{ content.field_back_option1['#title'] }}</td>
+          <td>{{ content.field_back_option1.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_lock_option.0  %}
+        <tr>
+
+          <td>{{ content.field_lock_option['#title'] }}</td>
+          <td>{{ content.field_lock_option.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_back_option2.0  %}
+        <tr>
+
+          <td>{{ content.field_back_option2['#title'] }}</td>
+          <td>{{ content.field_back_option2.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_table_option.0 %}
+        <tr>
+
+          <td>{{ content.field_table_option['#title'] }}</td>
+          <td>{{ content.field_table_option.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_option1_type.0  %}
+        <tr>
+
+          <td>{{ content.field_option1_type['#title'] }}</td>
+          <td>{{ content.field_option1_type.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_back_head_type.0 %}
+        <tr>
+
+          <td>{{ content.field_back_head_type['#title'] }}</td>
+          <td>{{ content.field_back_head_type.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_weight_size.0 %}
+        <tr>
+
+          <td>{{ content.field_weight_size['#title'] }}</td>
+          <td>{{ content.field_weight_size.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_back_head_option.0  %}
+        <tr>
+
+          <td>{{ content.field_back_head_option['#title'] }}</td>
+          <td>{{ content.field_back_head_option.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_other_option1.0 %}
+        <tr>
+
+          <td>{{ content.field_other_option1['#title'] }}</td>
+          <td>{{ content.field_other_option1.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_back_dimension.0 %}
+        <tr>
+
+          <td>{{ content.field_back_dimension['#title'] }}</td>
+          <td>{{ content.field_back_dimension.0 }}</td>
+
+        </tr>
+      {% endif %}
+      {% if content.field_wheel_option.0  %}
+        <tr>
+
+          <td>{{ content.field_wheel_option['#title'] }}</td>
+          <td>{{ content.field_wheel_option.0 }}</td>
+
+        </tr>
+      {% endif %}
+
+
+      </tbody>
+    </table>
+  </div>
+</div>

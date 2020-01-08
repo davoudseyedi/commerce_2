@@ -1,0 +1,4 @@
+# Schema for the configuration files of the radsystem.
+radsystem.settings:
+  type: theme_settings
+  label: 'radsystem settings'

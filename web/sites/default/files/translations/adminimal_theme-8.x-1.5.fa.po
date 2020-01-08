@@ -1,0 +1,26 @@
+# Persian, Farsi translation of Adminimal - Responsive Administration Theme (8.x-1.5)
+# Copyright (c) 2019 by the Persian, Farsi translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Adminimal - Responsive Administration Theme (8.x-1.5)\n"
+"POT-Creation-Date: 2019-05-23 04:47+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: Persian, Farsi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "Help"
+msgstr "راهنما"
+msgid "Page title"
+msgstr "عنوان صفحه"
+msgid "User login"
+msgstr "ورود کاربر"
+msgid "Primary tabs"
+msgstr "تب‌های اولیه"
+msgid "Secondary tabs"
+msgstr "تب‌های ثانویه"
+msgid "Main page content"
+msgstr "محتوای صفحه اصلی"

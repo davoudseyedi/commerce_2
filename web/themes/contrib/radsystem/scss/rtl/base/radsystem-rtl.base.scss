@@ -1,0 +1,96 @@
+// Vartheme (RTL) base, which Bootstrap (RTL) overrides.
+// -----------------------------------------------------------------------------
+@import "../../../node_modules/bootstrap/scss/functions";  // Bootstrap functions.
+@import "../../../node_modules/bootstrap/scss/mixins";     // Bootstrap mixins.
+@import "../../variables";                // radsystem variables.
+@import "../../mixins";                   // radsystem mixins.
+// -----------------------------------------------------------------------------
+
+/* Insert your Bootstrap (RTL) overrides for bootstrap-rtl library. */
+@font-face {
+  font-family:'IRANSans';
+  src: url('../../../fonts/iransans/eot/IRANSansWeb.eot');
+  src: url('../../../fonts/iransans/eot/IRANSansWeb.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+  url('../../../fonts/iransans/woff2/IRANSansWeb.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+  url('../../../fonts/iransans/woff/IRANSansWeb.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+  url('../../../fonts/iransans/ttf/IRANSansWeb.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+$iran-sans: 'IRANSans', Tahoma;
+
+body{
+  font-family:$iran-sans !important;
+  margin-top: 0 !important;
+}
+.tp-caption{
+  font-family: $iran-sans;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family:$iran-sans !important;
+}
+a{
+  font-family:$iran-sans !important;
+}
+span{
+  font-family: $iran-sans !important;
+}
+p{
+  font-family: $iran-sans !important;
+  font-size: 16px;
+}
+.owl-wrapper,.owl-slider-wrapper {
+
+  direction: ltr !important;
+
+}
+h1, h2, h3, h4, h5, h6{
+  letter-spacing: 0 !important;
+}
+.bx-wrapper{
+  direction: ltr;
+}
+.bx-wrapper .bx-controls-direction a{
+  font-size: 0;
+}
+.fivestar-widget > div {
+
+  float: right !important;
+  direction: rtl;
+
+}
+
+@media (min-width: 992px){
+  .we-mega-menu-ul .dropdown-menu> a::before,
+  .we-mega-menu-ul .dropdown-menu> a::after,
+  .we-mega-menu-ul .dropdown-menu> span::before,
+  .we-mega-menu-ul .dropdown-menu> span::after{
+    right: inherit !important;
+    left: 0 ;
+  }
+  .we-mega-menu-submenu li.we-mega-menu-li a::before,
+  .we-mega-menu-submenu li.we-mega-menu-li a::after,
+  .we-mega-menu-submenu li.we-mega-menu-li span::before,
+  .we-mega-menu-submenu li.we-mega-menu-li span::after{
+    transform: rotate(90deg) !important;
+  }
+  .we-mega-menu-ul>.we-mega-menu-li>a{
+    padding: 1rem 1.25rem !important;
+  }
+
+}
+
+@media (max-width: 991px){
+  //.navbar-we-mega-menu.navbar {
+  //  left: -15.625rem !important;
+  //  right: auto !important;
+  //}
+  [dir="rtl"] body.toggled{
+    right: 15.625rem !important;
+    left: auto !important;
+  }
+  [dir="rtl"] body.toggled .navbar-we-mega-menu.navbar {
+    left: auto !important;
+    right: 0 !important;
+  }
+}

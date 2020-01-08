@@ -1,0 +1,300 @@
+{#
+/**
+ * @file
+ *
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ *
+ * @ingroup themeable
+ */
+#}
+
+
+{# Product teaser. #}
+{% if view_mode == 'teaser' %}
+  {#  {% set image_url = file_url(product['variation_field_product_image'][0].entity.uri.value) %}#}
+  {%
+    set classesTeaser = [
+    'product',
+    'product--teaser',
+    'product--teaser--' ~ product_entity.title.value|clean_class
+  ]
+  %}
+
+  <div class="item node-product-teaser">
+    <div class="c-content-product-2">
+      <div class="c-content-overlay">
+        <div class="prd-img">
+          {% if product.field_product_image|render|trim is not empty %}
+            {{ product.field_product_image }}
+          {% else %}
+            <img src="{{ base_path ~ directory }}/images/gfx/no-image.jpg" class="no-product-thumbnail" alt="{{ product_entity.title.value }}" />
+          {% endif %}
+          <ul class="functional-buttons clearfix">
+            <li class="wishlist flag-outer">
+              <span>{{ product.flag_wishlist }}</span>
+            </li>
+            <li class="button-container view">
+              <a href="{{ product_url }}"><i class="far fa-eye"></i></a>
+            </li>
+            {#            <div class="quickview hidden-sm-down"> <i class="fa fa-"></i></div>#}
+          </ul>
+        </div>
+        <div class="c-product-badge">
+          {% if product.variation_list_price[0] is not empty %}
+            <div class="sale"><span>{{ 'Sale'|t }}</span></div>
+          {% endif %}
+          {% if product.field_new['#items'].value == '1' %}
+            <div class="new"><span>{{ 'New'|t }}</span></div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="c-info">
+        <h3 class="c-title">
+          {% if product.title %}
+            <a href="{{ product_url }}">{{ product['title'][0] }}</a>
+          {% endif %}
+        </h3>
+        <p class="c-price c-font-16 c-font-slim">
+            <span class="c-font-16 c-font-line-through c-font-red">
+            {{ product['variation_list_price'][0] }}
+            </span>
+          {{ product['variation_price'][0] }}
+        </p>
+        {{ product.variations }}
+      </div>
+      {#      <div class="c-overlay-wrapper">#}
+      {#        <div class="c-overlay-content">#}
+      {#          <a href="{{ product_url }}" class="btn btn-md c-btn-grey-1 c-btn-uppercase c-btn-bold c-btn-border-1x c-btn-square">#}
+      {#            {{ 'Explore'|t }}#}
+      {#          </a>#}
+      {#        </div>#}
+      {#      </div>#}
+    </div>
+  </div>
+
+  {#  </a>#}
+{% endif %}
+
+
+{# Product full page (default). #}
+{% if view_mode == 'default'  or view_mode == 'full' %}
+
+  {%
+    set classesFull = [
+    'product',
+    'product--full',
+    'product--full--' ~ product_entity.title.value|clean_class
+  ]
+  %}
+  <article{{ attributes.addClass(classesFull) }}>
+    <div>
+      <div class="row">
+        <div class="col-xs-12 back-and-share">
+          {# Back button. #}
+          <a href="/all-products" class="back-to-products">{{ 'Back to Products'|t }}</a>
+
+          {# Share. #}
+          <div class="sharethis-inline-share-buttons">{{ product.addtoany }}</div>
+        </div>
+      </div>
+      <div class="c-shop-product-details-2">
+        <div class="row">
+          <div class="col-md-6">
+            {{ product.variation_field_product_images }}
+          </div>
+          <div class="col-md-6">
+            <div class="c-product-meta">
+              <div class="c-content-title-1">
+                {% if  product.variation_sku %}
+                  <div class="c-product-sku ">
+                    <h5><strong>{{ 'کد محصول'|t }}:&nbsp </strong>{{ product.variation_sku.0 }}</h5>
+                  </div>
+                {% endif %}
+                <h3 class="c-font-uppercase c-font-bold">{{ product.title }}</h3>
+                <div class="c-line-left"></div>
+              </div>
+              <div class="c-product-badge">
+                {% if product.variation_list_price[0] is not empty %}
+                  <div class="sale"><span>{{ 'Sale'|t }}</span></div>
+                {% endif %}
+                {% if product.field_new['#items'].value == '1' %}
+                  <div class="new"><span>{{ 'New'|t }}</span></div>
+                {% endif %}
+              </div>
+              <div class="c-product-review list-inline-item">
+
+                <div class="x-vote list-inline-item order-0">{{ product.field_vote }}</div>
+                <div class="c-product-write-review list-inline-item order-1">
+                  <a class="c-font-red write-review-link" href="#reviews">
+                    {{ 'Write a review'|t }}
+                  </a>
+                </div>
+              </div>
+              <div class="c-product-cat list-inline-item">
+                {% if product.field_product_category %}
+
+                  <div class="c-product-category text-left"><span> | {{ 'Category'|t }}:</span><span>{{ product.field_product_category.0 }}</span> </div>
+                {% endif %}
+
+              </div>
+
+              <div class="c-product-price">
+                 <span class="c-font-16 c-font-line-through c-font-red">
+                   <h3>{{ product.variation_list_price }}</h3>
+                </span>
+
+                <h3>{{ product.variation_price }}</h3>
+
+              </div>
+              <div class="c-product-short-desc">
+                {{ product.field_short_description }}
+              </div>
+              {{ product.variations }}
+              <div class="request-product mt-4 list-inline-item">
+                <a href="/request?v={{ product_entity.product_id.value }}" class="btn btn-danger"><i class="fas fa-shopping-cart"></i> {{ 'درخواست محصول'|t }}</a>
+              </div>
+              <span class="flag-outer flag-outer-compare list-inline-item">
+                     {{ product.flag_wishlist }}
+              </span>
+              <span class="tag">
+                {{ product.field_product_tag }}
+              </span>
+              <div id="block-reassurance">
+                <ul class="row">
+                  <li class="col-lg-6 col-xs-12">
+                    <div class="block-reassurance-item">
+                      <img src="{{ base_path ~ directory }}/images/gfx/ic_verified_user_black_36dp_1x.png" alt="Policy"> <span class="h6">{{ 'خط مشی امنیتی'|t }}</span>
+                    </div>
+                  </li>
+                  <li class="col-lg-6 col-xs-12">
+                    <div class="block-reassurance-item">
+                      <img src="{{ base_path ~ directory }}/images/gfx/ic_local_shipping_black_36dp_1x.png" alt="Delivery"> <span class="h6">{{ 'تحویل کالا'|t }}</span>
+                    </div>
+                  </li>
+                  <li class="col-lg-6 col-xs-12">
+                    <div class="block-reassurance-item">
+                      <img src="{{ base_path ~ directory }}/images/gfx/ic_swap_horiz_black_36dp_1x.png" alt="Return"><span class="h6">{{ 'استرداد کالا'|t }}</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div class="c-content-box c-size-lg pb-0 product-field-groups">
+    <!-- End Product Content -->
+    <div class="c-shop-product-tab-1 pb-0">
+      <div class="bootstrap-nav-wrapper">
+        <ul class="nav nav-tabs">
+          <li class="nav_item desc align-center active">
+            <a href="#bootstrap-fieldgroup-nav-item--description" data-toggle="tab">{{ 'Description'|t }}</a></li>
+          <li class="nav_item spec align-center ">
+            <a href="#bootstrap-fieldgroup-nav-item--additional-information" data-toggle="tab">{{ 'Additional Information'|t }}</a>
+          </li>
+          <li class="nav_item  align-center reviews">
+            <a href="#bootstrap-fieldgroup-nav-item--reviews" class = "review-toggler" id = "reviews" data-toggle="tab">{{ 'Reviews'|t }}</a></li>
+        </ul>
+
+        <div class="tab-content nav-justified">
+          <div id="bootstrap-fieldgroup-nav-item--description" class="tab-pane active">
+            {{- product|without('addtoany','field_product_latin_name','field_furniture_features','field_product_features','variation_weight',
+              'field_product_isfeature','field_product_tag','variation_attributes',
+              'field_new','field_recommended_products','field_product_image','variation_langcode','field_product_brand','field_reviews',
+              'title', 'variation_title', 'variation_field_stock', 'variation_field_product_images',
+              'field_product_category', 'field_sale_label', 'field_vote', 'variation_price',
+              'variations', 'flag_compare', 'flag_wishlist', 'variation_list_price', 'variation_sku',
+              'field_short_description') -}}
+          </div>
+          <div id="bootstrap-fieldgroup-nav-item--additional-information" class="tab-pane ">
+            {#            <table class="table table-striped table-hover">#}
+
+            {#              <tbody>#}
+
+            {% if product.field_product_features.0 %}
+
+              {{ product.field_product_features.0 }}
+            {% endif %}
+
+
+
+            {% if product.field_furniture_features.0 %}
+              {{ product.field_furniture_features.0 }}
+            {% endif %}
+
+
+
+            {#              </tbody>#}
+            {#            </table>#}
+
+            {#            <div class="field field-name-field-sizes field-type-list-text field-label-above">#}
+            {#              {{ product.variation_attributes.variation_attribute_size }}#}
+            {#            </div>#}
+            {#            <div class="field field-name-field-colors field-type-list-text field-label-above">#}
+            {#              {{ product.variation_attributes.variation_attribute_color }}#}
+            {#            </div>#}
+            {#            <div class="field field-name-field-type field-type-list-text field-label-above">#}
+            {#              {{ product.variation_attributes.variation_attribute_type }}#}
+            {#            </div>#}
+
+            {#            {% if not product.variation_weight.value == '0' %}#}
+            {#              <div class="field field-name-field-weight field-type-list-text field-label-above">#}
+            {#                {{ product.variation_weight }}#}
+            {#              </div>#}
+            {#            {% endif %}#}
+
+            {#            <div class="collapsible bg-full-width c-bg-grey speed-fast effect-none">#}
+
+            {#              {{ product.field_product_category }}#}
+            {#              {{ product.field_product_brand}}#}
+
+            {#            </div>#}
+          </div>
+          <div id="bootstrap-fieldgroup-nav-item--reviews" class="tab-pane ">
+            <h3 class="c-font-uppercase c-font-bold c-font-22 c-center c-margin-b-40 c-margin-t-40">{{ 'Reviews for'|t }} {{ product.title }}</h3>
+            <div class="c-product-review-input">
+              {{ product.field_reviews }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="recommended-products">
+    <h2 class="block-title">{{ 'Recommended Products'|t }}</h2>
+    {{ product.field_recommended_products }}
+  </div>
+{% endif %}
+
+{% if view_mode == 'search_suggestion' %}
+
+    {%
+      set classesSearch = [
+      'product',
+      'product--search',
+      'product--search--' ~ product_entity.title.value|clean_class
+    ]
+    %}
+    <div class="item node-product-teaser {{ classesSearch }}">
+      <p class="c-title">
+        {% if product.title %}
+          <a href="{{ product_url }}">{{ product['title'][0] }}</a>
+        {% endif %}
+      </p>
+    </div>
+{% endif %}

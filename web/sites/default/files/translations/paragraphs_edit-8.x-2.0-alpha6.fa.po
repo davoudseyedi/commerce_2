@@ -1,0 +1,28 @@
+# Persian, Farsi translation of Paragraphs Edit (8.x-2.0-alpha6)
+# Copyright (c) 2017 by the Persian, Farsi translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Paragraphs Edit (8.x-2.0-alpha6)\n"
+"POT-Creation-Date: 2017-10-26 09:44+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: Persian, Farsi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "Delete"
+msgstr "حذف"
+msgid "Type"
+msgstr "نوع"
+msgid "Edit"
+msgstr "ویرایش"
+msgid "Parent"
+msgstr "والد"
+msgid "Field"
+msgstr "فیلد"
+msgid "Clone"
+msgstr "کپی سازی"
+msgid "Bundle"
+msgstr "بسته"

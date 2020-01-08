@@ -1,0 +1,22 @@
+# Persian, Farsi translation of CKEditor Anchor Link - For Drupal 8 (8.x-1.6)
+# Copyright (c) 2017 by the Persian, Farsi translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: CKEditor Anchor Link - For Drupal 8 (8.x-1.6)\n"
+"POT-Creation-Date: 2017-11-06 09:43+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: Persian, Farsi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "Link"
+msgstr "پیوند"
+msgid "Anchor"
+msgstr "لنگر"
+msgid "Unlink"
+msgstr "از پیوند خارج کردن"
+msgid "About"
+msgstr "درباره"

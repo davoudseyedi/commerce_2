@@ -1,0 +1,23 @@
+
+
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+    font-family: Flaticon;
+    font-style: normal;
+}
+
+.flaticon-email:before { content: "\f100"; }
+.flaticon-call:before { content: "\f101"; }
+.flaticon-location:before { content: "\f102"; }
+.flaticon-play-button:before { content: "\f103"; }
+.flaticon-user:before { content: "\f104"; }
+.flaticon-check:before { content: "\f105"; }
+.flaticon-development:before { content: "\f106"; }
+.flaticon-like:before { content: "\f107"; }
+.flaticon-checked:before { content: "\f108"; }
+.flaticon-tick:before { content: "\f109"; }
+.flaticon-plus:before { content: "\f10a"; }
+.flaticon-more:before { content: "\f10b"; }
+.flaticon-quotation:before { content: "\f10c"; }
+.flaticon-upload:before { content: "\f10d"; }

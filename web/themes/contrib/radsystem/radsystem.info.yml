@@ -1,0 +1,165 @@
+core: 8.x
+type: theme
+base theme: vartheme_bs4
+
+name: 'radsystem - Subtheme of Vartheme (Bootstrap 4 - SASS)'
+description: 'Based on Bootstrap 4 framework using SASS, and extending Vartheme (Bootstrap 4 - SASS).'
+project: vartheme_bs4
+
+regions:
+  navigation: 'Navigation'
+  navigation_collapsible: 'Navigation (Collapsible)'
+  header: 'Top Bar'
+  search_overlay: 'Search Overlay'
+  hero_slider: 'Media Hero Slider'
+  cover: 'Cover & Page Title'
+  box1_first: 'Box1 First'
+  box1_center: 'Box1 Center'
+  box1_second: 'Box1 Second'
+  box2_first: 'Box2 First'
+  box2_second: 'Box2 Second'
+  box2_third: 'Box2 Third'
+  box2_forth: 'Box2 Forth'
+  user1: 'User 1'
+  user2: 'User 2'
+  user3: 'User 3'
+  user4: 'User 4'
+  user5: 'User 5'
+  user6_first: 'User 6 First'
+  user6_second: 'User 6 Second'
+  icon_box1: 'Icon Box 1'
+  icon_box2: 'Icon Box 2'
+  icon_box3: 'Icon Box 3'
+  user7: 'User 7'
+  user8: 'User 8'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  content: 'Content'
+  sidebar_first: 'Primary'
+  sidebar_second: 'Secondary'
+  footer: 'Copyright'
+  footer1: 'Footer1'
+  footer2: 'Footer2'
+  footer3: 'Footer3'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+
+libraries:
+  # Bootstrap styles and scripts libraries.
+  - radsystem/bootstrap-styles
+  - radsystem/bootstrap-scripts
+
+  # radsystem Global styles and scripts libraries.
+  - radsystem/global-styles
+  - radsystem/global-scripts
+  - radsystem/framework
+
+  # radsystem Varbase Bootstrap Paragraphs colors style.
+  - radsystem/vbp-colors
+
+  # radsystem Better Login style.
+  - radsystem/betterlogin
+
+  # Icons: Uncomment the following if you want to use icons.
+  #- radsystem/material_design_icons
+  #- radsystem/fontawesome
+
+  # Fonts: Uncomment the following if you want to use the roboto font.
+  #- radsystem/roboto
+
+libraries-override:
+  vartheme_bs4/framework: false
+  vartheme_bs4/bootstrap-styles: false
+  vartheme_bs4/bootstrap-scripts: false
+  vartheme_bs4/global-styles: false
+  vartheme_bs4/global-scripts: false
+  vartheme_bs4/vbp-colors: false
+  vartheme_bs4/betterlogin: false
+
+  vartheme_bs4/breadcrumb: radsystem/breadcrumb
+  vartheme_bs4/dropbutton: radsystem/dropbutton
+  vartheme_bs4/file: radsystem/file
+  vartheme_bs4/form: radsystem/form
+  vartheme_bs4/indented: radsystem/indented
+  vartheme_bs4/maintenance_page: radsystem/maintenance_page
+  vartheme_bs4/node: radsystem/node
+  vartheme_bs4/sidebar-collapse: radsystem/sidebar-collapse
+  vartheme_bs4/tabs: radsystem/tabs
+  vartheme_bs4/verticaltabs: radsystem/verticaltabs
+  vartheme_bs4/alerts: radsystem/alerts
+
+  # Varbase module compnents overrides in radsystem.
+  varbase_bootstrap_paragraphs/vbp-colors: radsystem/vbp-colors
+  betterlogin/betterlogin_css: radsystem/betterlogin
+
+  varbase_heroslider_media/general-styling:
+    css:
+      theme:
+        css/theme/varbase-heroslider-media.theme.css: css/theme/varbase-heroslider-media.theme.css
+
+  vbp_text_and_image/vbp_text_and_image_default:
+    css:
+      theme:
+        css/default.css: css/layout/vbp_text_and_image_default.layout.css
+
+ckeditor_stylesheets:
+  # Base
+  - css/base/bootstrap.base.css
+  - css/base/vartheme_bs4.base.css
+  - css/base/radsystem.base.css
+  # Components
+  - css/components/affix.component.css
+  - css/components/ajax.component.css
+  - css/components/alerts.component.css
+  - css/components/autocomplete.component.css
+  - css/components/book.component.css
+  - css/components/book-navigation.component.css
+  - css/components/breadcrumb.component.css
+  - css/components/bs-callouts.component.css
+  - css/components/comments.component.css
+  - css/components/contextual.component.css
+  - css/components/details.component.css
+  - css/components/dropbutton.component.css
+  - css/components/feed-icon.component.css
+  - css/components/field.component.css
+  - css/components/file.component.css
+  - css/components/form.component.css
+  - css/components/header.component.css
+  - css/components/help.component.css
+  - css/components/icons.component.css
+  - css/components/image-button.component.css
+  - css/components/indented.component.css
+  - css/components/item-list.component.css
+  - css/components/list-group.component.css
+  - css/components/navbar.admin.component.css
+  - css/components/navbar.component.css
+  - css/components/node.component.css
+  - css/components/node-preview.component.css
+  - css/components/page.component.css
+  - css/components/progress-bar.component.css
+  - css/components/search-form.component.css
+  - css/components/shortcut.component.css
+  - css/components/sidebar.component.css
+  - css/components/sidebar-collapse.component.css
+  - css/components/site-footer.component.css
+  - css/components/skip-link.component.css
+  - css/components/table.component.css
+  - css/components/tabledrag.component.css
+  - css/components/tableselect.component.css
+  - css/components/tablesort.component.css
+  - css/components/tablesort-indicator.component.css
+  - css/components/tabs.component.css
+  - css/components/textarea.component.css
+  - css/components/ui-dialog.component.css
+  - css/components/ui-widget.component.css
+  - css/components/user.component.css
+  - css/components/varicons.component.css
+  - css/components/vb-tags.component.css
+  - css/components/vertical-tabs.component.css
+  - css/components/views.component.css
+  # Layout
+  - css/layout/edge2edge.layout.css
+  - css/layout/equal-height.layout.css
+  # Theme
+  - css/theme/content.theme.css
+  - css/theme/vbp-colors.theme.css
